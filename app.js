@@ -1,5 +1,6 @@
 const express = require("express");//引入EXPRESS库
 const cookieParser = require("cookie-parser");//引入cookie库
+console.log(cookieParser);
 const creatError=require('http-errors')//引入错误库
 
 const path = require("path");//引入fs.path拼接
@@ -25,17 +26,17 @@ app.use(express.urlencoded({extends: true,})
 
 app.use(cookieParser());//使用cookie中间件解析
 
-
-// 创建错误，重定向页面
-// app.use((req,res,next)=>{
-//     next(creatError(404))
-// })
-// app.use((err,req,res,next)=>{
-//     res.status(err.status||500);
-//     res.location('html/404.html')
-// })
 app.use("/product", productRouter);
 app.use("/users", userRouter);//相继使用路由文件
+
+// 创建错误，重定向页面
+app.use((req,res,next)=>{
+    next(creatError(404))
+})
+app.use((err,req,res,next)=>{
+    res.status(err.status||500);
+    res.location('html/404.html')
+})
 
 app.listen(conf.port, conf.host, () => {
   console.log(`app is running on http://${conf.host}:${conf.port}`);

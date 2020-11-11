@@ -1,0 +1,159 @@
+@charset 'utf-8';
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+}
+#body {
+  width: 786px;
+  height: 520px;
+  background-color: #fff;
+  padding: 0 34px 30px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+#body .logo {
+  width: 786px;
+  height: 48px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  text-align: center;
+}
+#body .title {
+  width: 786px;
+  height: 45px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  font-weight: normal;
+}
+#body .contant {
+  width: 786px;
+  height: 388px;
+  margin: 0 auto;
+  text-align: center;
+}
+#body .contant .contant-box {
+  width: 332px;
+  height: 248px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 0;
+}
+#body .contant .contant-box h4 {
+  width: 100%;
+  height: 20px;
+  padding-bottom: 5px;
+  color: #333;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+#body .contant .contant-box div {
+  width: 316px;
+  height: 40px;
+  padding-left: 14px;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #e8e8e8;
+  color: #555;
+  cursor: pointer;
+}
+#body .contant .contant-box div .phone {
+  width: 54px;
+  text-align: center;
+  border: 0 none;
+  float: left;
+}
+#body .contant .contant-box div p {
+  float: left;
+  width: 275px;
+  border-right: 1px solid #e8e8e8;
+  cursor: pointer;
+  text-align: left;
+}
+#body .contant .contant-box div input {
+  height: 17px;
+  line-height: 17px;
+  padding: 10px;
+  display: inline-block;
+  width: 235px;
+  border: none;
+  border-left: 1px solid #e8e8e8;
+  outline: none;
+  margin-top: -3px;
+}
+#body .contant .contant-box .text {
+  color: #666;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  line-height: 20px;
+}
+#body .contant .contant-box .button {
+  background-color: #ff6700;
+  border: 1px solid rgba(186, 186, 186, 0.3);
+  color: #fff;
+  width: 330px;
+  height: 42px;
+  margin: 0 auto;
+  line-height: 42px;
+  text-align: center;
+  font-size: 14px;
+  display: block;
+  cursor: pointer;
+  margin-top: 30px;
+}
+#body .attention {
+  width: 100%;
+  height: 39px;
+  padding-top: 40px;
+  text-align: center;
+  color: #9d9d9d;
+  font-size: 14px;
+}
+#body .attention a {
+  color: #333;
+  font-weight: bold;
+}
+.last {
+  width: 854px;
+  height: 19px;
+  line-height: 19px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
+  color: #757575;
+  margin-top: 70px;
+}
+.last a {
+  width: 28px;
+  padding: 0 10px;
+  height: 19px;
+  line-height: 19px;
+  color: #757575;
+}
+.last-text {
+  width: 854px;
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #9d9d9d;
+  margin: 0 auto;
+}

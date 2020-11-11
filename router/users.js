@@ -5,7 +5,7 @@ const {create} = require('domain');
 
 const router = express.Router();//启动路由文件
 
-router.route('/login')
+router.route('/reg')
     .post((req, res, next) => {
 
         let searchUser = `select * from users where username='${req.body.username}'`
@@ -27,14 +27,18 @@ router.route('/login')
                 let sql = `insert into users(username,password,email,phone)
                 value ('${req.body.username}','${passResult}','${req.body.email}','${req.body.phone}')`
                 console.log(sql);
-                res.send('已经给您注册了')
+                // res.send('已经给您注册了')
 
                 conn.query(sql, (err, result) => {
                     if (err) console.log(err);
-                    console.log(result);
-                    if (result.insertId) {
+                    // console.log(result);
+                    if (result.affectedRows) {
+                        // console.log(res.cookie)
+                        // res.cookie('abc','123')
+                        console.log(req.cookies);
                         res.cookie('username', req.body.username);
                         res.cookie('isLogined', true);
+                        console.log(req.cookies)
                         res.json({
                             msg: "注册成功",
                             username: req.body.username,
@@ -47,6 +51,6 @@ router.route('/login')
     });
 router.route('/login')
 .post((req,res,next)=>{
-    console.log(req.cookie);
+    console.log(req.cookies);
 })
 module.exports = router;
