@@ -1,14 +1,14 @@
-
 import './library/jquery.js';
 import './library/jquery.md5.js';
 import cookie from './library/cookie.js';
+import {baseUrl} from './library/config.js';
 
 $('#submit').on('click', function() {
     
     let password = $.md5($('[name=password]').val());
     $.ajax({
         type: "post",
-        url: "http://localhost:7717/users/reg",
+        url: `${baseUrl}/users/reg`,
         data: {
             username: $('[name=username]').val(),
             password: password,
@@ -20,4 +20,5 @@ $('#submit').on('click', function() {
             console.log(response);
         }
     });
-});
+});import { format } from '../../dao/conn.js';
+

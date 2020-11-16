@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/good.css">
     <script src="../iconfont/iconfont.js"></script>
     <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <script src="../js/products.js" type="module"></script>
 </head>
 
 <body>
@@ -94,7 +95,7 @@
                     <li data-target="#carousel-example-generic" data-slide-to="4"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active">
+                    <!-- <div class="item active">
                         <img src="../img/mi10-01.jpg" alt="...">
                     </div>
                     <div class="item">
@@ -108,7 +109,7 @@
                     </div>
                     <div class="item">
                         <img src="../img/mi10-05.jpg" alt="...">
-                    </div>
+                    </div> -->
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -121,13 +122,14 @@
             </div>
         </div>
         <div class="body-right">
-            <h2><img src="../img/mi-10-11.11.jpg" alt="">小米10至尊纪念版</h2>
-            <p>
-                <font color="#ff4a00">「碎屏保、延保5折；+1元得200G云空间月卡；最高享24期免息；可使用北京消费券；购机得双倍米金」</font>
-                120X 超远变焦 / 120W 秒充科技 / 120Hz刷新率 + 240Hz采样率 / 骁龙865旗舰处理器 / 双模5G / 10倍混合光学变焦 / OIS光学防抖+EIS数字防抖 / 2000万超清前置相机 / 双串蝶式石墨烯基锂离子电池 / 等效4500mAh大电量 / 120W 有线秒充+50W无线秒充+10W无线反充 / WiFi 6 / 多功能NFC / 红外遥控
+            <div class="h2"></div>
+            <!-- <h2><img src="../img/mi-10-11.11.jpg" alt="">小米10至尊纪念版</h2> -->
+            <p class="feature">
+                <!-- <font color="#ff4a00">「碎屏保、延保5折；+1元得200G云空间月卡；最高享24期免息；可使用北京消费券；购机得双倍米金」</font>
+                120X 超远变焦 / 120W 秒充科技 / 120Hz刷新率 + 240Hz采样率 / 骁龙865旗舰处理器 / 双模5G / 10倍混合光学变焦 / OIS光学防抖+EIS数字防抖 / 2000万超清前置相机 / 双串蝶式石墨烯基锂离子电池 / 等效4500mAh大电量 / 120W 有线秒充+50W无线秒充+10W无线反充 / WiFi 6 / 多功能NFC / 红外遥控 -->
             </p>
             <p class="title">小米自营</p>
-            <div class="price">5599元 </div>
+            <div class="price"></div>
             <div class="none"></div>
             <div class="adress">
                 <div><span class="iconfont icon-location"></span> <span>北京</span>
@@ -135,7 +137,7 @@
                     <span>海淀区</span>
                     <span>清河街道</span>
                     <a href="">修改</a> </div>
-                <div><a href="">有现货</a></div>
+                <div><a href="" class="inventory">库存:</a></div>
             </div>
             <div class="color">
                 <div>选择颜色</div>
@@ -159,7 +161,7 @@
                 </div>
                 <ul>
                     <li>
-                        <input type="redio" class="radio">
+                        <input type="radio" class="radio">
                         <img src="../img/bao.png" alt="">
                         <h3>意外保障服务 <span>349元</span></h3>
                         <div class="desc">手机意外碎屏/进水/碾压等损坏</div>
@@ -245,10 +247,10 @@
                 </ul>
             </div>
             <div class="all-price">
-                <li>小米10至尊纪念版 8GB+256GB 陶瓷黑 <span>5599元</span></li>
-                <div>总计:5599元</div>
+                <!-- <li>小米10至尊纪念版 8GB+256GB 陶瓷黑 <span>5599元</span></li> -->
+                <div class="last-price"></div>
             </div>
-            <div class="payment"> <a href="">加入购物车</a> <a href=""><span class="iconfont icon-like-alt"></span>喜欢</a></div>
+            <div class="payment"> <a class="addItem">加入购物车</a> <a href=""><span class="iconfont icon-like-alt"></span>喜欢</a></div>
             <span class="last"><span class="iconfont icon-duigou" color="#fff"></span>小米自营</span>
             <span class="last"><span class="iconfont icon-duigou" color="#fff"></span>小米发货</span>
             <span class="last"><span class="iconfont icon-duigou" color="#fff"></span>7天无理由退货</span>
