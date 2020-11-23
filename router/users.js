@@ -11,7 +11,7 @@ router.route('/reg')
         let searchUser = `select * from users where username='${req.body.username}'`
 
         conn.query(searchUser, (err, result) => {
-            console.log(result);
+            // console.log(result);
             if (result.length) {
                 res.json({
                     msg: '用户名已存在',
@@ -23,14 +23,14 @@ router.route('/reg')
             else {
                 let md5 = crypto.createHash('md5')
                 let passResult = md5.update(req.body.password).digest('hex')
-                console.log(passResult);
+                // console.log(passResult);
                 let sql = `insert into users(username,password,email,phone)
                 value ('${req.body.username}','${passResult}','${req.body.email}','${req.body.phone}')`
-                console.log(sql);
+                // console.log(sql);
 
                 conn.query(sql, (err, result) => {
                     if (err) console.log(err);
-                    console.log(result);
+                    // console.log(result);
                     if (result.affectedRows) {
                         // console.log(res.cookie)
                         // res.cookie('abc','123')
@@ -50,29 +50,24 @@ router.route('/reg')
     });
 router.route('/login')
 .post((req,res,next)=>{
-    let searchUser = `select * from users where username='${req.body.username}'`;
-    let password = `select * from users where username='${req.body.password}'`;
-    conn.query(searchUser,(err,resultUsers)=>{
+    console.log(req.body.password);
+    let md5 = crypto.createHash('md5')
+    let passResult = md5.update(req.body.password).digest('hex')
+
+    let sql = `select * from users where username='${req.body.username}' and password='${passResult}'`;//前端和后端两次加密后的密码
+    console.log(sql);
+
+    conn.query(sql,(err,result)=>{
         if(err) console.log(err);
-        if(resultUsers.length){
-            conn.query(password,(err,resultPassword)=>{
-                if(err) console.log(err);
-                if(resultPassword.length){
-                    res.json({
-                        msg:'登陆成功！'
-                    })
-                }else{
-                    res.json({
-                        msg:'用户名或密码错误'
-                    })
-                }
+        if(result.length){
+            res.json({
+                msg:'登录成功'
+            })
+        }else{
+            res.json({
+                msg:'账号或密码错误'
             })
         }
-        else {res.json({
-            msg:'用户名或密码错误'
-        })}
-        
     })
-
 })
 module.exports = router;

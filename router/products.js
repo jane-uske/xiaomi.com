@@ -21,6 +21,15 @@ router.route('/getItem')
 
     })
 
+    router.route('/getItems')
+    .get((req, res, next) => {
+        let sql = `select * from product where id in (${req.query.idList})`;
+
+        conn.query(sql, (err, result) => {
+            if (err) console.log(err);
+            res.json(result);
+        })
+    });
 
 
 

@@ -1,8 +1,8 @@
 import './library/jquery.js';
 import './library/jquery.md5.js';
-import cookie from './library/cookie.js';
+// import cookie from './library/cookie.js';
 import {baseUrl} from './library/config.js';
-
+console.log(1);
 $('#submit').on('click', function() {
     
     let password = $.md5($('[name=password]').val());
@@ -20,5 +20,6 @@ $('#submit').on('click', function() {
             console.log(response);
         }
     });
-});import { format } from '../../dao/conn.js';
+});
+// import { format } from '../../dao/conn.js';
 

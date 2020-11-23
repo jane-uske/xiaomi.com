@@ -16,9 +16,9 @@ function timer(int) {
     if (h < 9) h = "0" + h;
     if (m < 9) m = "0" + m;
     if (s < 9) s = "0" + s;
-    $(".clearfix .h").text(h);
-    $(".clearfix .m").text(m);
-    $(".clearfix .s").text(s);
+    $(".count .h").text(h);
+    $(".count .m").text(m);
+    $(".count .s").text(s);
     int--;
     if (int <= 0) {
       clearInterval(timer);

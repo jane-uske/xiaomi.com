@@ -1,17 +1,25 @@
 import "./library/jquery.js";
-import { baseUrl } from "./library/config.js";
-import cookie from './library/cookie.js';console.log(1);
+import {
+  baseUrl
+} from "./library/config.js";
+import cookie from './library/cookie.js';
+console.log(1);
 (function () {
+  $('.addItem').on('click',function(){
+    $('.addItem').css('background',"green")
+  })
   let id = location.search.split("=")[1];
   // console.log(baseUrl);
   $.ajax({
     type: "get",
     url: `${baseUrl}/products/getItem`,
-    data: { id: id },
+    data: {
+      id: id
+    },
     dataType: "json",
     success: function (response) {
       response = response[0];
-      //   console.log(response);
+      console.log(response);
       let picture = JSON.parse(response.picture);
       //   console.log(picture);
       //标题
@@ -59,8 +67,32 @@ import cookie from './library/cookie.js';console.log(1);
       $(".inventory").append(tempNum);
       //购物车
       $('.addItem').on("click", function () {
-            console.log(cookie);
-        });
+        // console.log(cookie);
+        findItem(response.id)
+      });
     },
   });
+
+  function findItem(id) {
+    // console.log(id);
+    let shop = cookie.get('shop');
+    let product = {
+      id: id,
+      // num: num
+    }
+    if (shop) {
+      shop = JSON.parse(shop);
+      // if (shop.some(elm => elm.id === id)) {
+      //   shop.forEach(el => {
+      //     el.id === id ? num++ : null
+      //   })
+      // } else {
+        shop.push(product)
+      // }
+    } else {
+      shop = [];
+      shop.push(product)
+    }
+    cookie.set('shop', JSON.stringify(shop), 1)
+  }
 })();

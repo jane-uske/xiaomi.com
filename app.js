@@ -13,7 +13,7 @@ const app = express();//启动EXPRESS
 
 const conf = {
   port: 7717,
-  host: "localhost",
+  host: "10.31.162.13",
 };//配置文件
 
 //中间件如下
